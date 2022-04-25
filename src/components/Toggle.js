@@ -24,13 +24,13 @@ const Container = styled.div``;
 const Title = styled.h2``;
 
 const ToggleContainer = styled.div`
-  display: flex;
+  display: inline-flex;
   position: relative;
   align-items: center;
-  width: 300px;
   border-radius: 50px;
   background-color: lightgray;
   overflow: auto;
+  padding: 0 2px;
 `;
 
 const ToggleBtn = styled.div`
@@ -49,9 +49,8 @@ const ToggleTitle = styled.p`
 
 const ToggleSlider = styled.div`
   position: absolute;
-  transform: translateX(1.5%);
-  transform: ${(props) => (props.isSelected ? null : "translateX(98.5%)")};
-  width: 50%;
+  transform: ${(props) => (props.isSelected ? null : "translateX(100%)")};
+  width: 150px;
   height: 90%;
   transition: all ease 0.3s;
   border-radius: 50px;
