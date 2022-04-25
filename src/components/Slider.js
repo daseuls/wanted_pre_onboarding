@@ -1,8 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import styled from "styled-components";
+
+const PERCENT = [1, 25, 50, 75, 100];
 
 export default function Slider() {
   const [value, setValue] = useState(0);
+
+  const inputRef = useRef();
+
+  const onSlideBar = () => {
+    setValue(inputRef.current.value);
+  };
   return (
     <Container>
       <Title>3. Slider</Title>
@@ -12,8 +20,19 @@ export default function Slider() {
       </ValueBox>
 
       <ValueBarContainer>
-        <SlideBar></SlideBar>
-        <Slide></Slide>
+        <SlideInput
+          type="range"
+          min="0"
+          max="100"
+          ref={inputRef}
+          onInput={onSlideBar}
+          value={value}
+        />
+        <ButtonContainer>
+          {PERCENT.map((el) => (
+            <Button onClick={() => setValue(el)}>{el}%</Button>
+          ))}
+        </ButtonContainer>
       </ValueBarContainer>
     </Container>
   );
@@ -52,13 +71,34 @@ const ValuePercent = styled.p`
 `;
 
 const ValueBarContainer = styled.div`
-  width: 320px;
+  width: 330px;
+  margin-top: 30px;
 `;
 
-const SlideBar = styled.div`
+const Button = styled.div`
+  width: 30px;
+  /* height: 15px; */
+  background-color: lightgrey;
+  border-radius: 10px;
+  font-size: 10px;
+  padding: 3px;
+  text-align: center;
+  color: gray;
+  :hover {
+    background-color: #6ebfb8;
+    color: white;
+  }
+`;
+
+const SlideInput = styled.input`
   width: 100%;
-  background-color: red;
-  height: 2px;
+  margin: 0;
+  padding: 0;
 `;
 
-const Slide = styled.div``;
+const ButtonContainer = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  /* background-color: yellow; */
+`;
