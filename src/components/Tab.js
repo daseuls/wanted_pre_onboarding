@@ -22,11 +22,8 @@ export default function Tab() {
           ))}
         </MenuContainer>
         <TabBarContainer>
-          <TabBar></TabBar>
-          <TabSlider
-            itemIndex={itemIndex}
-            itemLength={100 / MENU.length}
-          ></TabSlider>
+          <TabBar />
+          <TabSlider itemIndex={itemIndex} itemLength={100 / MENU.length} />
         </TabBarContainer>
       </TabContainer>
     </Container>

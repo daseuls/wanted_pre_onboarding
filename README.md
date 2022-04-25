@@ -1,70 +1,15 @@
-# Getting Started with Create React App
+# 1. Toggle.js
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 1) 구현 방법
 
-## Available Scripts
+## 2) 구현하면서 어려웠던 점 / 해결과정
 
-In the project directory, you can run:
+# 2. Tab.js
 
-### `npm start`
+## 1) 구현 방법
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+각 메뉴를 배열로 담아 놓고, map을 통해 렌더링 하고, 밑의 TabBar와 TabBarSlider 두 태그를 만들고 position을 absolute로 하여 슬라이드 애니메이션을 구현하였습니다.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 2) 구현하면서 어려웠던 점 / 해결과정
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+메뉴가 3개가 아닌 그 이상의 추가가 될 수 있는 상황을 위해 확장성을 고려하게 되었습니다. 이 부분에서 어려움을 느꼈습니다. 메뉴에 들어갈 것들을 배열로 넣은 뒤 map을 사용해서 메뉴를 보여주었고, 어떤 메뉴가 클릭되었는지 알고, 그것에 따라 밑의 TabBar를 이동시켜주어야 했기 떄문에 메뉴의 index를 state로 만들었습니다. 메뉴의 index는 메뉴가 클릭이 되면 클릭된 메뉴의 index로 업데이트 됩니다. 따라서 map의 index와 state의 index 값을 같은지 비교하여 선택된 메뉴인지 아닌지 판단한 후, 조건부 스타일링을 해주었습니다. 또 메뉴의 개수를 props로 전달해주어 따라 메뉴와 메뉴의 TabBar width 비율을 설정해주었습니다. 이렇게 되면 메뉴의 개수가 늘어났을 때에 width 비율도 개수에 맞게 부모 태그안에서 비율이 설정이 되게 됩니다. TabBar 슬라이드 애니메이션은 state에 저장된 index에 따라서 x축으로 index \* 100% translate 해주었습니다. 이렇게 되면 클릭한 index만큼 x축으로 이동하게 됩니다.
