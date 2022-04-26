@@ -77,7 +77,6 @@ const ValueBarContainer = styled.div`
 
 const Button = styled.div`
   width: 30px;
-  /* height: 15px; */
   background-color: lightgrey;
   border-radius: 10px;
   font-size: 10px;
