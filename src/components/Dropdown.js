@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { AiOutlineSearch, AiFillCaretDown } from "react-icons/ai";
 
 const SELECT_ITEM = [
+  { id: 0, name: "All" },
   { id: 1, name: "Javascript" },
   { id: 2, name: "Typescript" },
   { id: 3, name: "C++" },

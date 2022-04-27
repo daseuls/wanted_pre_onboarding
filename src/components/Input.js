@@ -9,7 +9,7 @@ import {
 export default function Input() {
   const [inputValue, setInputValue] = useState("");
   const [isPwVisible, setIsPwVisible] = useState(false);
-  const [isAbleEmail, setIsAbleEmail] = useState(false);
+  const [isAbleEmail, setIsAbleEmail] = useState(true);
 
   const checkEmailValidation = (email) => {
     const validation =
