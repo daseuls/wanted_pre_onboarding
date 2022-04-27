@@ -83,18 +83,19 @@ const SubContainer = styled.div`
 `;
 
 const InputTitle = styled.p`
-  font-size: 12px;
   margin: 1px 3px;
   color: gray;
+  font-size: 12px;
 `;
 
 const InputTarget = styled.input`
-  padding: 12px 10px;
   width: 100%;
+  padding: 12px 10px;
+  background-color: #f2f2f2;
   border: 1px lightgray solid;
   border-radius: 3px;
-  background-color: #f2f2f2;
   outline: none;
+
   :focus {
     border: 1px gray solid;
   }
@@ -116,6 +117,6 @@ const InputContainer = styled.div`
 `;
 
 const WarningText = styled.p`
-  font-size: 12px;
   color: red;
+  font-size: 12px;
 `;
