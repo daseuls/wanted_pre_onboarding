@@ -47,14 +47,14 @@ const TabContainer = styled.div`
 `;
 
 const MenuTitle = styled.div`
-  width: ${(props) => props.itemLength}%;
-  justify-content: center;
   display: flex;
+  justify-content: center;
   padding: 15px;
-  font-size: 14px;
-  cursor: pointer;
+  width: ${(props) => props.itemLength}%;
   color: ${(props) => (props.isSelected ? "black" : "gray")};
+  font-size: 15px;
   font-weight: 700;
+  cursor: pointer;
 `;
 
 const MenuContainer = styled.div`
@@ -75,10 +75,10 @@ const TabBar = styled.div`
 
 const TabSlider = styled.div`
   position: absolute;
-  height: 2.5px;
   top: 0;
-  background-color: #6ebfb8;
   width: ${(props) => props.itemLength}%;
+  height: 2.5px;
+  background-color: #6ebfb8;
   transform: translateX(${(props) => props.itemIndex * 100}%);
   transition: all 0.3s ease;
 `;
