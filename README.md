@@ -2,6 +2,9 @@
 
 wanted 프리온보딩 선발 과제용 레포지토리입니다.
 
+> 배포 링크 <br />
+> https://6268dd22f4c9ef5b87fd49df--gleaming-crumble-17c74a.netlify.app/
+
 # 사용 기술, 프레임워크, 라이브러리
 
 `javascript` `react` `styled-component` `react-icon`
