@@ -24,19 +24,19 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 50px 0;
+  margin-top: 50px;
+  margin-bottom: 100px;
 `;
 
 const Title = styled.h2``;
 
 const ToggleContainer = styled.div`
-  display: inline-flex;
   position: relative;
+  display: flex;
   align-items: center;
-  border-radius: 50px;
-  background-color: lightgray;
-  overflow: auto;
   padding: 0 2px;
+  background-color: lightgray;
+  border-radius: 50px;
 `;
 
 const ToggleBtn = styled.div`
@@ -49,16 +49,16 @@ const ToggleBtn = styled.div`
 `;
 
 const ToggleTitle = styled.p`
-  font-size: 13px;
   color: ${(props) => (props.isSelected ? "black" : "gray")};
+  font-size: 13px;
 `;
 
 const ToggleSlider = styled.div`
   position: absolute;
-  transform: ${(props) => (props.isSelected ? null : "translateX(100%)")};
   width: 150px;
   height: 90%;
-  transition: all ease 0.3s;
   border-radius: 50px;
   background-color: white;
+  transform: ${(props) => (props.isSelected ? null : "translateX(100%)")};
+  transition: all ease 0.3s;
 `;

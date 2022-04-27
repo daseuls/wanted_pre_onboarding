@@ -35,7 +35,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 50px 0;
+  margin-bottom: 100px;
 `;
 
 const Title = styled.h2``;

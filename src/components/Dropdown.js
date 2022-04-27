@@ -2,24 +2,25 @@ import React, { useState, useRef } from "react";
 import styled from "styled-components";
 import { AiOutlineSearch, AiFillCaretDown } from "react-icons/ai";
 
+const SELECT_ITEM = [
+  { id: 1, name: "Javascript" },
+  { id: 2, name: "Typescript" },
+  { id: 3, name: "C++" },
+  { id: 4, name: "C#" },
+  { id: 5, name: "Vue" },
+  { id: 6, name: "Python" },
+  { id: 7, name: "Java" },
+  { id: 8, name: "Php" },
+  { id: 9, name: "Swift" },
+  { id: 10, name: "Kotlin" },
+  { id: 11, name: "SQL" },
+];
+
 export default function Dropdown() {
-  const SELECT_ITEM = [
-    { id: 1, name: "Javascript" },
-    { id: 2, name: "Typescript" },
-    { id: 3, name: "C++" },
-    { id: 4, name: "C#" },
-    { id: 5, name: "Vue" },
-    { id: 6, name: "Python" },
-    { id: 7, name: "Java" },
-    { id: 8, name: "Php" },
-    { id: 9, name: "Swift" },
-    { id: 10, name: "Kotlin" },
-    { id: 11, name: "SQL" },
-  ];
   const inputRef = useRef();
   const [itemList, setItemList] = useState(SELECT_ITEM);
   const [selectedItem, setSelectedItem] = useState(SELECT_ITEM[0].name);
-  const [isSelected, setIsSelected] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const onFilterItemList = () => {
     setItemList(
@@ -34,7 +35,7 @@ export default function Dropdown() {
       <Title>5. Dropdown</Title>
       <DropdownContainer>
         <DropdownSelectContainer>
-          <DropdownSelect onClick={() => setIsSelected(!isSelected)}>
+          <DropdownSelect onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
             {selectedItem}
           </DropdownSelect>
           <IconContainer>
@@ -42,7 +43,7 @@ export default function Dropdown() {
           </IconContainer>
         </DropdownSelectContainer>
 
-        {isSelected ? (
+        {isDropdownOpen ? (
           <>
             <DropdownSearchInputContainer>
               <IconContainer>
@@ -58,7 +59,7 @@ export default function Dropdown() {
               {itemList.map((item) => (
                 <DropdownOption
                   onClick={() => {
-                    setIsSelected(false);
+                    setIsDropdownOpen(false);
                     setSelectedItem(item.name);
                   }}
                   key={item.id}
@@ -79,7 +80,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 50px 0;
+  margin-bottom: 50px;
   height: 500px;
 `;
 
