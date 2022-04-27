@@ -92,19 +92,19 @@ const DropdownContainer = styled.div`
 
 const DropdownSelectContainer = styled.div`
   display: flex;
+  justify-content: flex-end;
   align-items: center;
   width: 100%;
-  justify-content: flex-end;
 `;
 
 const DropdownSelect = styled.div`
   width: 100%;
+  margin-bottom: 5px;
   padding: 15px;
+  font-size: 14px;
   border: 1px solid lightgray;
   border-radius: 3px;
   cursor: pointer;
-  font-size: 14px;
-  margin-bottom: 5px;
 `;
 
 const DropdownOption = styled.option`
@@ -127,18 +127,18 @@ const IconContainer = styled.div`
 `;
 
 const DropdownSearchInput = styled.input`
+  width: 100%;
   padding: 15px 30px;
-  outline: none;
   border: 1px solid lightgray;
   border-radius: 3px;
-  width: 100%;
+  outline: none;
 `;
 
 const DropdownItemsContainer = styled.div`
+  width: 330px;
   height: 200px;
-  overflow: auto;
   border: 1px solid lightgray;
   border-radius: 3px;
+  overflow: auto;
   cursor: pointer;
-  width: 330px;
 `;
