@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import styled from "styled-components";
-import { AiOutlineSearch } from "react-icons/ai";
+import { AiOutlineSearch, AiFillCaretDown } from "react-icons/ai";
 
 export default function Dropdown() {
   const SELECT_ITEM = [
@@ -24,7 +24,7 @@ export default function Dropdown() {
   const onFilterItemList = () => {
     setItemList(
       [...SELECT_ITEM].filter((item) =>
-        item.name.includes(inputRef.current.value)
+        item.name.toLowerCase().includes(inputRef.current.value.toLowerCase())
       )
     );
   };
@@ -33,9 +33,15 @@ export default function Dropdown() {
     <Container>
       <Title>5. Dropdown</Title>
       <DropdownContainer>
-        <DropdownSelect onClick={() => setIsSelected(!isSelected)}>
-          {selectedItem}
-        </DropdownSelect>
+        <DropdownSelectContainer>
+          <DropdownSelect onClick={() => setIsSelected(!isSelected)}>
+            {selectedItem}
+          </DropdownSelect>
+          <IconContainer>
+            <AiFillCaretDown size={16} color={"black"} />
+          </IconContainer>
+        </DropdownSelectContainer>
+
         {isSelected ? (
           <>
             <DropdownSearchInputContainer>
@@ -80,7 +86,14 @@ const Container = styled.div`
 const Title = styled.h2``;
 
 const DropdownContainer = styled.div`
-  width: 300px;
+  width: 330px;
+`;
+
+const DropdownSelectContainer = styled.div`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-end;
 `;
 
 const DropdownSelect = styled.div`
@@ -109,7 +122,7 @@ const DropdownSearchInputContainer = styled.div`
 
 const IconContainer = styled.div`
   position: absolute;
-  margin-left: 10px;
+  margin: 0 10px;
 `;
 
 const DropdownSearchInput = styled.input`
