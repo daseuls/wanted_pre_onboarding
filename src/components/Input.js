@@ -13,7 +13,7 @@ export default function Input() {
 
   const checkEmailValidation = (email) => {
     const validation =
-      /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
+      /^([0-9a-zA-Z_.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
     return validation.test(email);
   };
 

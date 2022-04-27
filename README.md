@@ -1,4 +1,4 @@
-# wanted pre onboarding Assignment
+# Wanted pre onboarding Assignment
 
 wanted 프리온보딩 선발 과제용 레포지토리입니다.
 
@@ -20,7 +20,7 @@ yarn start
 
 ## 1. Toggle ✅
 
-### 1) 구현 방법
+![toggle](https://user-images.githubusercontent.com/71131248/165448574-0d152680-99b2-48e8-87ed-36dde6244435.gif)
 
 두 개의 토글 버튼을 만들 후, 슬라이드 해서 보여줄 토글 슬라이드를 position absolute를 해서 위치를 설정해주었습니다. 각 토글이 클릭되었을 때를 true, false의 상태값으로 설정한 후, props로 상태를 전달해 주어 조건부 스타일링과 슬라이더를 움직일 수 있도록 했습니다. 슬라이더에는 transition을 통해 x축으로 이동할 때 애니메이션 효과를 주었습니다.
 
@@ -29,7 +29,11 @@ yarn start
 toggle 기능을 라이브러리를 쓰지 않고 처음 만들어 보았기 떄문에 움직이는 slider를 어떻게 구현해야 할 지에 대해 어려움을 겪었습니다.
 slider는 실제로 x축으로 움직이는 애니메이션이기 때문에 버튼과는 완전히 독립적인 태그를 만들고 그 태그에 애니메이션을 주어야 겠다는 것을 꺠달은 뒤 구현을 하게 되었습니다.
 
+---
+
 ## 2. Tab ✅
+
+![tab](https://user-images.githubusercontent.com/71131248/165448580-2c8295c5-8cd8-4683-818d-52435374fab5.gif)
 
 ### 1) 구현 방법
 
@@ -39,7 +43,11 @@ slider는 실제로 x축으로 움직이는 애니메이션이기 때문에 버�
 
 메뉴가 3개가 아닌 그 이상의 추가가 될 수 있는 상황을 위해 확장성을 고려하게 되었습니다. 이 부분에서 어려움을 느꼈습니다. 메뉴에 들어갈 것들을 배열로 넣은 뒤 map을 사용해서 메뉴를 보여주었고, 어떤 메뉴가 클릭되었는지 알고, 그것에 따라 밑의 TabBar를 이동시켜주어야 했기 떄문에 메뉴의 index를 state로 만들었습니다. 메뉴의 index는 메뉴가 클릭이 되면 클릭된 메뉴의 index로 업데이트 됩니다. 따라서 map의 index와 state의 index 값을 같은지 비교하여 선택된 메뉴인지 아닌지 판단한 후, 조건부 스타일링을 해주었습니다. 또 메뉴의 개수를 props로 전달해주어 따라 메뉴와 메뉴의 TabBar width 비율을 설정해주었습니다. 이렇게 되면 메뉴의 개수가 늘어났을 때에 width 비율도 개수에 맞게 부모 태그안에서 비율이 설정이 되게 됩니다. TabBar 슬라이드 애니메이션은 state에 저장된 index에 따라서 x축으로 index \* 100% translate 해주었습니다. 이렇게 되면 클릭한 index만큼 x축으로 이동하게 됩니다.
 
+---
+
 ## 3. Slider ✅
+
+![slider](https://user-images.githubusercontent.com/71131248/165448586-2462818e-ccb1-4a69-bf8f-9a126ea14808.gif)
 
 ### 1) 구현 방법
 
@@ -49,7 +57,11 @@ slider는 실제로 x축으로 움직이는 애니메이션이기 때문에 버�
 
 처음에 구현할때 input에 range 타입이 있는지 몰랐습니다. 따라서 slide bar를 직접 구현하려고 했으나 그 과정중 어려움을 겪었고 range 타입이 있는 것을 알게 되었습니다. range 타입의 input의 onInput 이벤트를 통해서 값을 슬라이드 할때마다 inputValue라는 state를 그 값으로 업데이트 해주었고, 그 state값을 위의 박스에 보여주었습니다.
 
+---
+
 ## 4. Input ✅
+
+![input](https://user-images.githubusercontent.com/71131248/165448596-25481375-fef1-4b8b-ba15-10ced4f1d134.gif)
 
 ### 1) 구현 방법
 
@@ -59,7 +71,11 @@ slider는 실제로 x축으로 움직이는 애니메이션이기 때문에 버�
 
 경고 문구를 나타내기 위해서 input에서 focus가 떠났을 때 이벤트를 찾는 것이 어려웠던 점이었습니다. 이를 구현하기 위해 찾아보다가 onBlur 라는 이벤트가 있는 것을 알게되어, 이를 사용해보았고 새로운 이벤트를 알게된 좋은 경험이었습니다. 또한 현재 state가 3개가 되는데 state를 최소화해서 구현할 수 없는지에 대해 고민을 해보게 되었습니다.
 
+---
+
 ## 5. Dropdown ✅
+
+![dropdown](https://user-images.githubusercontent.com/71131248/165449096-5774b27d-8e19-4ee4-a8a9-2f98a9435657.gif)
 
 ### 1) 구현 방법
 

@@ -28,8 +28,10 @@ export default function Slider() {
           value={value}
         />
         <ButtonContainer>
-          {PERCENT.map((el) => (
-            <Button onClick={() => setValue(el)}>{el}%</Button>
+          {PERCENT.map((el, index) => (
+            <Button key={index} onClick={() => setValue(el)}>
+              {el}%
+            </Button>
           ))}
         </ButtonContainer>
       </ValueBarContainer>

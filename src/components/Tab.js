@@ -13,6 +13,7 @@ export default function Tab() {
         <MenuContainer>
           {MENU.map((el, index) => (
             <MenuTitle
+              key={index}
               onClick={() => setItemIndex(index)}
               isSelected={itemIndex === index}
               itemLength={100 / MENU.length}
