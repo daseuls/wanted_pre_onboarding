@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-const MENU = ["감자", "고구마", "카레라이스"];
+const MENU = [
+  { id: 0, name: "감자" },
+  { id: 1, name: "고구마" },
+  { id: 2, name: "카레라이스" },
+];
 
 export default function Tab() {
   const [itemIndex, setItemIndex] = useState(0);
@@ -11,14 +15,14 @@ export default function Tab() {
       <Title>2. Tab</Title>
       <TabContainer>
         <MenuContainer>
-          {MENU.map((el, index) => (
+          {MENU.map((item, index) => (
             <MenuTitle
-              key={index}
+              key={item.id}
               onClick={() => setItemIndex(index)}
               isSelected={itemIndex === index}
               itemLength={100 / MENU.length}
             >
-              {el}
+              {item.name}
             </MenuTitle>
           ))}
         </MenuContainer>
