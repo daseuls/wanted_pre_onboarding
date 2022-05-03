@@ -3,11 +3,12 @@ import styled from "styled-components";
 
 export default function Toggle() {
   const [isSelected, setIsSelected] = useState(true);
+
   return (
     <Container>
       <Title>1. Toggle</Title>
       <ToggleContainer>
-        <ToggleSlider isSelected={isSelected}></ToggleSlider>
+        <ToggleSlider isSelected={isSelected} />
         <ToggleBtn onClick={() => setIsSelected(true)}>
           <ToggleTitle isSelected={isSelected}>기본</ToggleTitle>
         </ToggleBtn>
