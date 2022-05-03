@@ -1,16 +1,21 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
-const PERCENT = [1, 25, 50, 75, 100];
+const PERCENT = [
+  { id: 0, value: 1 },
+  { id: 1, value: 25 },
+  { id: 2, value: 50 },
+  { id: 3, value: 75 },
+  { id: 4, value: 100 },
+];
 
 export default function Slider() {
   const [value, setValue] = useState(0);
 
-  const inputRef = useRef();
-
-  const onSlideBar = () => {
-    setValue(inputRef.current.value);
+  const onSlideBar = (e) => {
+    setValue(e.currentTarget.value);
   };
+
   return (
     <Container>
       <Title>3. Slider</Title>
@@ -23,14 +28,13 @@ export default function Slider() {
           type="range"
           min="0"
           max="100"
-          ref={inputRef}
           onInput={onSlideBar}
           value={value}
         />
         <ButtonContainer>
           {PERCENT.map((el, index) => (
-            <Button key={index} onClick={() => setValue(el)}>
-              {el}%
+            <Button key={index} onClick={() => setValue(el.value)}>
+              {el.value}%
             </Button>
           ))}
         </ButtonContainer>
